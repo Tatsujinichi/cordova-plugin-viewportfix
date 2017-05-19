@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-viewportfix" version="1.0.0">
+    <name>viewportfix</name>
+    <description>Cordova viewportfix Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,viewportfix</keywords>
+    <js-module src="www/viewportfix.js" name="viewportfix">
+        <clobbers target="viewportfix" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WizAssetsPlugin" >
+                <param name="android-package" value="jp.wizcorp.phonegap.plugin.WizAssets.WizAssetsPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="platforms/android/src/jp/wizcorp/phonegap/plugin/WizAssets/HttpToFile.java"
+                     target-dir="src/jp/wizcorp/phonegap/plugin/WizAssets"/>
+    </platform>
+</plugin>
